@@ -170,7 +170,7 @@ macro_rules! unsafe_ifunc {
 /// # Safety
 ///
 /// Pointers must be valid. See `One::find_raw`.
-#[inline(always)]
+#[cfg_attr(not(windows), inline(always))]
 pub(crate) fn memchr_raw(
     n1: u8,
     start: *const u8,
